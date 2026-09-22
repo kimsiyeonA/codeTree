@@ -19,13 +19,18 @@ public class Main {
         }
         Arrays.sort(nums);
 
-        for(int i = 0; i < n ; i++){
-            for(int j = 0; j < n; j ++){
-                if(newNums[i].num == nums[j].num && newNums[i].idx == nums[j].idx){
-                    //System.out.println(newNums[i].num  + "...." + nums[j].num + " " + j);
-                    index[i] = j+1;
-                }  
-            }
+        // for(int i = 0; i < n ; i++){
+        //     for(int j = 0; j < n; j ++){
+        //         if(newNums[i].num == nums[j].num && newNums[i].idx == nums[j].idx){
+        //             //System.out.println(newNums[i].num  + "...." + nums[j].num + " " + j);
+        //             index[i] = j+1;
+        //         }  
+        //     }
+        // }
+
+        // 정렬된 숫자들의 원래 인덱스를 활용한 정답 배열 저장:
+        for(int i = 0; i < n; i++){
+            index[nums[i].idx - 1 ] = i + 1;;
         }
 
         // System.out.println(Arrays.toString(index));
